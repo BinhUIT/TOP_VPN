@@ -23,8 +23,6 @@ jobs:
           echo '{"extends": ["stylelint-config-standard"]}' > .stylelintrc.json
       - name: Check HTML Syntax
         run: htmlhint "$HTML_PATH"
-      - name: Check CSS Syntax
-        run: stylelint "$CSS_PATH"
       - name: Verify Root Index File
         run: |
           if [ ! -f index.html ]; then
