@@ -1,0 +1,349 @@
+/* DESIGN SYSTEM VARIABLES */
+:root {
+    --primary-color: #ff5a00; /* Orange Accent for Main CTA */
+    --dark-color: #0f172a;    /* Navy Deep Blue for trust & text */
+    --light-bg: #f8fafc;     /* Clean background */
+    --border-color: #e2e8f0;
+    --font-sans: 'Inter', sans-serif;
+    --spacing-unit: 8px;
+}
+
+/* BASE STYLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--dark-color);
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 3);
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e04f00;
+}
+
+.btn-dark {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: #1e293b;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    color: var(--dark-color);
+}
+
+/* HEADER */
+.header {
+    border-bottom: 1px solid var(--border-color);
+    padding: calc(var(--spacing-unit) * 2) 0;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo span:first-child { color: var(--dark-color); }
+.logo span:last-child { color: var(--primary-color); }
+
+.nav a {
+    margin-right: 24px;
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+}
+
+.nav a:hover { color: var(--dark-color); }
+
+/* HERO */
+.hero {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    background: #e2e8f0;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto 16px;
+    letter-spacing: -0.5px;
+}
+
+.hero-desc {
+    color: #475569;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* COMPARISON TABLE */
+.comparison-section {
+    padding: 60px 0;
+}
+
+.table-header {
+    margin-bottom: 32px;
+}
+
+.table-header h2 { font-size: 28px; font-weight: 700; }
+
+.vpn-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vpn-row {
+    display: grid;
+    grid-template-columns: 60px 200px 120px 1fr 200px;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+    background: white;
+}
+
+.vpn-row.featured {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 20px rgba(255, 90, 0, 0.08);
+}
+
+.ribbon {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+.rank-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.brand-tag {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.stars { color: #f59e0b; font-size: 18px; }
+.score { font-weight: 600; font-size: 14px; }
+
+.col-features ul {
+    list-style: none;
+}
+
+.col-features li {
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 4px;
+}
+
+.col-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-note {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* FAQ SECTION */
+.faq-section {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+}
+
+.faq-container { max-width: 800px; }
+.faq-container h2 { text-align: center; margin-bottom: 32px; }
+
+.faq-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    margin-bottom: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-color);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    color: #475569;
+    font-size: 15px;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--dark-color);
+    color: #94a3b8;
+    padding: 40px 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* RESPONSIVE LAYOUT (Dev thinking: Mobile First/Adaptability) */
+/* Mặc định trên Desktop: Ẩn nút Hamburger */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+/* XỬ LÝ RESPONSIVE KHI CO UI (Dưới 992px) */
+@media (max-width: 992px) {
+    .header-cta { 
+        display: none; /* Ẩn nút View Rankings trên mobile cho gọn */
+    }
+
+    .hamburger-menu { 
+        display: flex; /* Hiện nút Hamburger trên mobile */
+    }
+
+    /* Biến nav thành menu xổ xuống từ Header */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Ngay dưới header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-bottom: 1px solid var(--border-color);
+        padding: 16px calc(var(--spacing-unit) * 3);
+        gap: 16px;
+        max-height: 0; /* Mặc định ẩn bằng cách ép chiều cao về 0 */
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+    }
+
+    /* Class này sẽ được JS thêm vào khi người dùng bấm mở menu */
+    .nav.mobile-open {
+        max-height: 300px; /* Cho phép bung chiều cao */
+        padding: 24px calc(var(--spacing-unit) * 3);
+    }
+
+    .nav a {
+        margin-right: 0;
+        font-size: 18px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    
+    /* Hiệu ứng chuyển Hamburger thành dấu X khi mở menu */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Phần vpn-table giữ nguyên cấu trúc dọc cho mobile */
+    .vpn-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        text-align: center;
+    }
+    .col-features ul {
+        display: inline-block;
+        text-align: left;
+    }
+}
