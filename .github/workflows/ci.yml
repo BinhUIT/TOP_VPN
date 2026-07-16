@@ -1,0 +1,29 @@
+name: ci
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-node-version: '20'
+      - name: Install Linting Tools
+        run: |
+          npm install -g htmlhint stylelint stylelint-config-standard
+      - name: Check HTML Syntax
+        run: htmlhint "**/*.html"
+      - name: Check CSS Syntax
+        run: stylelint "**/*.css" --config stylelint-config-standard
+      - name: Verify Root Index File
+        run: |
+          if [ ! -f index.html ]; then
+            echo "ERROR: index.html is missing in the root directory!"
+            exit 1
+          fi
