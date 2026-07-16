@@ -17,13 +17,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-node-version: '20'
-      - name: Install Linting Tools
+      - name: Install Linting Tools & Setup Config
         run: |
           npm install -g htmlhint stylelint stylelint-config-standard
+          echo '{"extends": ["stylelint-config-standard"]}' > .stylelintrc.json
       - name: Check HTML Syntax
-        run: htmlhint "**/*.html"
+        run: htmlhint "$HTML_PATH"
       - name: Check CSS Syntax
-        run: stylelint "**/*.css" --config stylelint-config-standard
+        run: stylelint "$CSS_PATH"
       - name: Verify Root Index File
         run: |
           if [ ! -f index.html ]; then
